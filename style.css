@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/********************************************************************
+* CSS for main components
+*********************************************************************/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: rgb(42, 173, 160);
+    transition: .25s ease-in-out;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+h2 {
+    text-align: center;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.invisible {
+    z-index: -100;
+    width: 0em;
+    height: 0em;
+    border: none;
+}
+
+aside {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: start;
+    width: 16em;
+    height: 100vh;
+    background: #edf1f7;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(128, 128, 128, 0.19);
+    transition: .25s ease-in-out;
+}
+
+h1 {
+    margin: 1em;
+}
+
+.header-title {
+    position: relative;
+    top: .5em;
+    right: 1em;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 1.2em;
+}
+
+li {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    cursor: pointer;
+}
+
+li:hover {
+    color: rgb(42, 173, 160);
+    transition: .25s ease-in-out;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .5em;
+    margin-bottom: 0;
+    float: left;
+}
+
+#expand-button {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2em;
+    font-size: 1.25em;
+    background: rgba(0,0,0,0);
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#expand-button:hover {
+    color: rgb(42, 173, 160);
+    transition: .25s ease-in-out;
+}
+
+#size-button {
+    font-size: 1.25em;
+    background: rgba(0,0,0,0);
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#logout-form {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    margin-bottom: 1em;
+}
+
+#logouttext {
+    position: relative;
+    right: .45em;
+    top: .15em;
+}
+
+#size-button:hover {
+    color: rgb(42, 173, 160);
+    transition: .25s ease-in-out;
+}
+
+#user-text {
+    float: left;
+}
+
+.mini-outline {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top: 0;
+    margin-top: 2em;
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background-image: linear-gradient(rgb(0, 128, 128), rgb(4, 224, 224));
+    cursor: pointer;
+}
+
+.outline-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background-image: linear-gradient(rgb(0, 128, 128), rgb(4, 224, 224));
+    cursor: pointer;
+}
+
+.mini-profile {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 2.5em;
+    background-image: url('./Assets/profile-placeholder.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/********************************************************************
+* CSS for Login Page
+*********************************************************************/
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./Assets/green.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(128, 128, 128, 0.19);
+    min-width: 23em;
+    margin-top: 1em;
+    padding: 1em;
+    padding-bottom: 3.5em;
+    background: white;
+    border-radius: .1em;
+}
+
+.login-input {
+    background: rgb(230, 230, 230);
+    width: 22.7em;
+    height: 2.3em;
+    border: none;
+    padding-left: .5em;
+    padding-right: .5em;
+    outline: none;
+}
+
+.login-input::placeholder {
+    color: black;
+    opacity: 1;
+}
+  
+:-ms-input-placeholder { 
+    color: black;
+}
+  
+::-ms-input-placeholder {
+    color: black;
+}
+
+#login-title {
+    position: relative;
+    top: .75em;
+    font-size: 2.5em;
+}
+
+.button-container {
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+#login-button {
+    position: relative;
+    left: .25em;
+    width: 12em;
+    height: 2.5em;
+    margin-bottom: 1em;
+    cursor: pointer;
+    background: teal;
+    border: 3px;
+    border-style: solid;
+    border-color: teal;
+    color: white;
+}
+
+#login-button-reg {
+    position: relative;
+    left: .25em;
+    width: 12em;
+    height: 2.5em;
+    margin-bottom: 1em;
+    cursor: pointer;
+    background: white;
+    border: 3px;
+    border-style: solid;
+    border-color: teal;
+    color: teal;
+}
+
+#signup-button {
+    position: relative;
+    right: .25em;
+    width: 12em;
+    height: 2.5em;
+    margin-bottom: 1em;
+    background: white;
+    border: 3px;
+    border-style: solid;
+    border-color: teal;
+    color: teal;
+    cursor: pointer;
+}
+
+#signup-button-reg {
+    position: relative;
+    right: .25em;
+    width: 12em;
+    height: 2.5em;
+    margin-bottom: 1em;
+    background: teal;
+    border: 3px;
+    border-style: solid;
+    border-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#acc-click {
+    position: relative;
+    top: 2em;
+}
+
+.submit {
+    background: teal;
+    color: white;
+    border: none;
+    width: 23.7em;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: rgb(2, 85, 85);
+    transition: .25s;
+}
+
+.reset {
+    background: rgb(255, 72, 72);
+    color: white;
+    border: none;
+    width: 6.5em;
+    height: 2.5em;
+    border-radius: .5em;
+    margin-left: .5em;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: rgb(177, 4, 4);
+    transition: .25s;
+}
+
+/********************************************************************
+* CSS for Dashboard
+*********************************************************************/
+.content-container {
+    position: relative;
+    margin-left: 20em;
+    margin-right: 5em;
+    padding-bottom: 5em;
+}
+
+.post {
+    width: 75%;
+    min-height: 2em;
+    background: rgb(230, 230, 230);
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    min-height: 3em;
+    background: rgb(230, 230, 230);
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.input-post {
+    margin-left: 1em;
+    height: 2.2em;
+    width: 84%;
+    padding: .2em;
+    padding-left: .4em;
+    border: none;
+}
+
+.post-submit {
+    width: 5em;
+    height: 2.6em;
+    background: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.post-submit:hover {
+    background-color: rgb(2, 85, 85);
+    transition: .25s;
+}
+
+.name-post {
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+
+.text-post {
+    margin-left: 4.7em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9em;
+}
+
+.delete-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    color: rgb(179, 3, 3);
+    background: rgb(230, 230, 230);
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-group {
+    /* position: absolute;
+    margin-bottom: 1em; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5em;
+    height: 2.5em;
+    padding: .5em;
+    background: rgb(179, 3, 3);
+    color: rgb(230, 230, 230);
+    margin-top: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-group:hover {
+    transition: ease-in-out .25s;
+    background: rgb(102, 4, 4);
+}
+
+.leave-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5em;
+    height: 2.5em;
+    padding: .5em;
+    background: rgb(14, 122, 194);
+    color: rgb(230, 230, 230);
+    border: none;
+    cursor: pointer;
+}
+
+.group-buttons-container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4em;
+}
+
+.edit-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1.5em;
+    color: teal;
+    background: rgb(230, 230, 230);
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+
+.post-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: .5em;
+    left: 83%;
+    height: 3em;
+    width: 3em;
+}
+
+/********************************************************************
+* CSS for Profile
+*********************************************************************/
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.end {
+    position: relative;
+    bottom: 2.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.post-container {
+    display: flex;
+}
+
+.float-left {
+    float: left;
+}
+
+.center-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#profile-outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    height: 15em;
+    border-radius: 15em;
+    background-image: linear-gradient(rgb(0, 128, 128), rgb(4, 224, 224));
+    margin-top: 2em;
+}
+
+#profile-pic {
+    width: 14em;
+    height: 14em;
+    border-radius: 14em;
+    background-image: url('./Assets/profile-placeholder.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/********************************************************************
+* CSS for Groups
+*********************************************************************/
+.groups {
+    width: 21em;
+    min-height: 3em;
+    background: rgb(230, 230, 230);
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.group-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#add-person {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-person {
+    height: 2.2em;
+    width: 20em;
+    padding: .2em;
+    padding-left: .4em;
+    border: none;
+}
+
+.input-group {
+    height: 2.2em;
+    width: 25em;
+    padding: .2em;
+    padding-left: .4em;
+    border: none;
+}
+
+.group-input {
+    position: relative;
+    left: 5px;
+    background: rgb(230, 230, 230);
+    width: 22.7em;
+    height: 2.6em;
+    border: none;
+    padding-left: .5em;
+    padding-right: .5em;
+    outline: none;
+}
+
+.member-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 4em;
+    overflow-x: hidden;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.member-post {
+    margin-left: .5em;
+    margin-right: 3em;
+    font-size: 1.2em;
+}
+
+.gray-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    margin: 0 auto;
+    margin-top: 5em;
+    width: 15em;
+    height: 15em;
+    background: rgb(230, 230, 230);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(128, 128, 128, 0.19);
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+/********************************************************************
+* CSS for Search
+*********************************************************************/
+#searchbar {
+    position: relative;
+    left: 5px;
+    width: 75%;
+}
+
+#search-container {
+    width: 50%;
+}
+
+#margin-shrink {
+    margin-bottom: -2em;
+}
+
+/********************************************************************
+* CSS for Explore
+*********************************************************************/
+.explore-container {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 14em;
+    height: 16em;
+    background: rgb(216, 216, 216);
+    margin: 1.5em;
+}
